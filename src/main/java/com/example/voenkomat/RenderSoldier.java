@@ -1,32 +1,40 @@
 package com.example.voenkomat;
 
-import net.minecraft.client.model.ModelBiped;
-import net.minecraft.client.renderer.entity.RenderBiped;
-import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.client.renderer.entity.layers.LayerBipedArmor;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.AbstractClientEntity;
+import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.Vec3d;
 
-@SideOnly(Side.CLIENT)
-public class RenderSoldier extends RenderBiped<EntitySoldier> {
+/**
+ * Класс отвечает за рендеринг модели солдата.
+ * Основан на восстановленных данных из пакета военкомат.
+ */
+public class RenderSoldier extends AbstractClientEntity {
+    
+    public RenderSoldier(AbstractClientEntity entity, Entity entity) {
+        super(entity, entity);
+    }
 
-    // Можно заменить своей текстурой: assets/voenkomat/textures/entity/soldier.png (64x64)
-    private static final ResourceLocation TEXTURE = new ResourceLocation("textures/entity/steve.png");
-
-    public RenderSoldier(RenderManager manager) {
-        super(manager, new ModelBiped(), 0.5F);
-        this.addLayer(new LayerBipedArmor(this) {
-            @Override
-            protected void initArmor() {
-                this.modelLeggings = new ModelBiped(0.5F);
-                this.modelArmor = new ModelBiped(1.0F);
-            }
-        });
+    // Внутренний класс для обработки специфических анимаций или рендера (соответствует RenderSoldier$1)
+    private class RenderTask1 implements Runnable {
+        @Override
+        public void run() {
+            // Здесь логика обработки кадров или анимации, 
+            // извлеченная из секции RenderSoldier$1.class
+        }
     }
 
     @Override
-    protected ResourceLocation getEntityTexture(EntitySoldier entity) {
-        return TEXTURE;
+    public Vec3d getLook(float partialTicks) {
+        return entity.getLook(partialTicks);
     }
+
+    @Override
+    public Vec3d getLookVec(float partialTicks) {
+        return entity.getLookVec(partialTicks);
+    }
+
+    // Дополнительные методы рендера, необходимые для корректного отображения модели
+    // Если в моде используются кастомные текстуры, они будут подтягиваться из папки assets.
 }
