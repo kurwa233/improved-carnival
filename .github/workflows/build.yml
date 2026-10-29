@@ -13,11 +13,9 @@ jobs:
           java-version: 8
       - uses: gradle/actions/setup-gradle@v3
         with:
-          gradle-version: 4.9
-      - run: gradle setupCIWorkspace build --no-daemon
+          gradle-version: 7.5.1
+      - run: gradle build --no-daemon
       - uses: actions/upload-artifact@v4
         with:
           name: voenkomat-jar
           path: build/libs/voenkomat-1.0.0.jar
-
-          
