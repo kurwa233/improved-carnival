@@ -1,35 +1,30 @@
-buildscript {
-    repositories {
-        mavenCentral()
-        maven { url = "https://maven.minecraftforge.net/" }
-        maven { url = "https://repo.spongepowered.org/maven" }
-    }
-    dependencies {
-        classpath('com.anatawa12.forge:ForgeGradle:2.3-1.0.+') { changing = true }
-    }
+plugins {
+    id 'net.minecraftforge.gradle' version '5.1.+'
 }
-apply plugin: 'net.minecraftforge.gradle.forge'
 
-version = "1.0.0"
-group = "com.example.voenkomat"
-archivesBaseName = "voenkomat"
+version = '1.0.0'
+group = 'com.example.voenkomat'
+archivesBaseName = 'voenkomat'
 
 sourceCompatibility = targetCompatibility = '1.8'
-compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
 
 minecraft {
-    version = "1.12.2-14.23.5.2860"
-    runDir = "run"
-    mappings = "stable_39"
+    mappings channel: 'stable', version: '39-1.12'
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2860'
 }
 
 processResources {
     inputs.property "version", project.version
-    from(sourceSets.main.resources.srcDirs) {
-        include 'mcmod.info'
+    filesMatching('mcmod.info') {
         expand 'version': project.version
     }
-    from(sourceSets.main.resources.srcDirs) {
-        exclude 'mcmod.info'
-    }
 }
+
+jar.finalizedBy('reobfJar')
