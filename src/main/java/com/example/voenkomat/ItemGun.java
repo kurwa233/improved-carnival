@@ -126,7 +126,7 @@ public class ItemGun extends Item {
     @Override
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flag) {
-        tooltip.add(TextFormatting.GRAY + "Патроны: " + I18n.format(ammo.getUnlocalizedName() + ".name"));
+     tooltip.add(TextFormatting.GRAY + "Патроны: " + I18n.format("item." + VoenkomatMod.MODID + "." + ammo.getRegistryName().getResourcePath() + ".name"));
         tooltip.add(TextFormatting.GRAY + "Урон: " + damage + (auto ? "  (автоматический огонь — зажмите ПКМ)" : ""));
     }
 }
