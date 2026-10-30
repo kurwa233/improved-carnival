@@ -128,7 +128,7 @@ public abstract class EntitySoldier extends EntityMob {
         double dz = target.posZ - this.posZ;
         double dy = target.getEntityBoundingBox().minY + target.height * 0.6D - bullet.posY;
         double dist = MathHelper.sqrt(dx * dx + dz * dz);
-        float err = gun.getInaccuracy() + this.getAimError() * (4 - this.world.getDifficulty().getDifficultyId());
+        float err = gun.getInaccuracy() + this.getAimError() * (4 - this.world.getDifficulty().ordinal());
         bullet.shoot(dx, dy + dist * 0.01D, dz, gun.getSpeed(), err);
         this.world.spawnEntity(bullet);
         this.playSound(gun.getSound(), 1.2F, gun.getPitch() + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.1F);

@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
-import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -126,7 +125,7 @@ public class ItemGun extends Item {
     @Override
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flag) {
-     tooltip.add(TextFormatting.GRAY + "Патроны: " + I18n.format("item." + VoenkomatMod.MODID + "." + ammo.getRegistryName().getResourcePath() + ".name"));
+        tooltip.add(TextFormatting.GRAY + "Патроны: " + (String.valueOf(ammo.getRegistryName()).endsWith("9x18") ? "9x18" : "7.62"));
         tooltip.add(TextFormatting.GRAY + "Урон: " + damage + (auto ? "  (автоматический огонь — зажмите ПКМ)" : ""));
     }
 }
