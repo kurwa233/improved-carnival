@@ -58,7 +58,7 @@ public class ModItems {
 
     private static <T extends Item> T reg(T item, String name) {
         item.setRegistryName(VoenkomatMod.MODID, name);
-        item.setUnlocalizedName(VoenkomatMod.MODID + "." + name);
+        item.setTranslationKey(VoenkomatMod.MODID + "." + name);
         item.setCreativeTab(CreativeTabs.COMBAT);
         ALL.add(item);
         return item;
