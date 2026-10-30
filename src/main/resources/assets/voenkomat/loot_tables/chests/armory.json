@@ -1,0 +1,98 @@
+{
+  "pools": [
+    {
+      "rolls": {
+        "min": 2,
+        "max": 4
+      },
+      "entries": [
+        {
+          "type": "item",
+          "name": "voenkomat:makarov",
+          "weight": 14
+        },
+        {
+          "type": "item",
+          "name": "voenkomat:ak47",
+          "weight": 10
+        },
+        {
+          "type": "item",
+          "name": "voenkomat:svd",
+          "weight": 4
+        },
+        {
+          "type": "item",
+          "name": "voenkomat:pkm",
+          "weight": 3
+        },
+        {
+          "type": "item",
+          "name": "voenkomat:sergeant_helmet",
+          "weight": 6
+        },
+        {
+          "type": "item",
+          "name": "voenkomat:sergeant_chestplate",
+          "weight": 5
+        },
+        {
+          "type": "item",
+          "name": "voenkomat:sergeant_leggings",
+          "weight": 5
+        },
+        {
+          "type": "item",
+          "name": "voenkomat:sergeant_boots",
+          "weight": 5
+        },
+        {
+          "type": "item",
+          "name": "voenkomat:private_leggings",
+          "weight": 6
+        },
+        {
+          "type": "item",
+          "name": "voenkomat:private_boots",
+          "weight": 6
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "min": 2,
+        "max": 3
+      },
+      "entries": [
+        {
+          "type": "item",
+          "name": "voenkomat:ammo_9x18",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 16,
+                "max": 40
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "voenkomat:ammo_762",
+          "weight": 12,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 16,
+                "max": 48
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
