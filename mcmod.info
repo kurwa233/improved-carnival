@@ -1,0 +1,8 @@
+[{
+  "modid": "voenkomat",
+  "name": "Voenkomat",
+  "description": "Военкоматы в мире и враждебные солдаты в военной форме.",
+  "version": "${version}",
+  "mcversion": "1.12.2",
+  "authorList": ["you"]
+}]
